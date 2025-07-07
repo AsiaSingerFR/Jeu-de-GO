@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu de Go</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main-menu" class="screen active">
+        <h1>Jeu de Go</h1>
+        <button id="play-btn">Jouer</button>
+        <button id="rules-btn">Règles</button>
+        <button id="donate-btn">Faire un don</button>
+    </div>
+
+    <div id="difficulty-menu" class="screen">
+        <h2>Choisir la difficulté</h2>
+        <button class="difficulty-btn" data-difficulty="easy">Facile (9x9)</button>
+        <button class="difficulty-btn" data-difficulty="medium">Moyen (13x13)</button>
+        <button class="difficulty-btn" data-difficulty="hard">Difficile (19x19)</button>
+        <button class="difficulty-btn" data-difficulty="two-players">Deux joueurs</button>
+        <button class="back-to-main">Retour</button>
+    </div>
+
+    <div id="game-screen" class="screen">
+        <div id="game-info">
+            <p>Tour: <span id="turn">Noir</span></p>
+            <p>Captures Noir: <span id="black-captures">0</span></p>
+            <p>Captures Blanc: <span id="white-captures">0</span></p>
+            <button id="pass-btn">Passer</button>
+        </div>
+        <div id="board"></div>
+        <button class="back-to-main">Retour au menu</button>
+    </div>
+
+    <div id="rules-screen" class="screen">
+        <h2>Règles du jeu de Go</h2>
+        <p>Le but du jeu de Go est de contrôler plus de territoire que son adversaire. Les joueurs placent à tour de rôle des pierres (noires ou blanches) sur les intersections d'un plateau quadrillé (goban).</p>
+        <p>Les pierres encerclées sont capturées et retirées du plateau. Le jeu se termine lorsque les deux joueurs passent leur tour. Le score est alors calculé en comptant les territoires et les captures.</p>
+        <button class="back-to-main">Retour</button>
+    </div>
+
+    <div id="donate-screen" class="screen">
+        <h2>Faire un don</h2>
+        <p>Si vous appréciez ce jeu, vous pouvez soutenir le développeur avec un don.</p>
+        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=asia.singer.fr@gmail.com&item_name=Donation+for+Go+Game" target="_blank">
+            Faire un don avec PayPal
+        </a>
+        <br>
+        <button class="back-to-main">Retour</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

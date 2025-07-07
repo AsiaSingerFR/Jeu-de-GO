@@ -1,0 +1,77 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.screen {
+    display: none;
+    text-align: center;
+}
+
+.screen.active {
+    display: block;
+}
+
+#board {
+    display: grid;
+    border: 2px solid #333;
+    background-color: #dcb35c;
+}
+
+.intersection {
+    border: 1px solid #999;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.intersection .stone {
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Dynamic board sizing will be handled by JavaScript */
+
+.intersection {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #999;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.intersection .stone {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.stone.black {
+    background-color: #000;
+}
+
+.stone.white {
+    background-color: #fff;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#game-info {
+    margin-bottom: 10px;
+}
