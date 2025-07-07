@@ -1,4 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const backgroundAnimation = document.getElementById('background-animation');
+
+    function createAnimatedStone() {
+        const stone = document.createElement('div');
+        stone.classList.add('animated-stone');
+        const size = Math.random() * 20 + 10; // Random size between 10px and 30px
+        stone.style.width = `${size}px`;
+        stone.style.height = `${size}px`;
+        stone.style.left = `${Math.random() * 100}vw`;
+        stone.style.animationDuration = `${Math.random() * 5 + 5}s`; // Duration between 5s and 10s
+        stone.style.animationDelay = `${Math.random() * 5}s`;
+        stone.style.backgroundColor = Math.random() > 0.5 ? '#000' : '#fff';
+
+        backgroundAnimation.appendChild(stone);
+
+        // Remove stone after animation to prevent clutter
+        stone.addEventListener('animationend', () => {
+            stone.remove();
+        });
+    }
+
+    for (let i = 0; i < 50; i++) { // Create 50 stones initially
+        createAnimatedStone();
+    }
+
+    setInterval(createAnimatedStone, 500); // Add a new stone every 500ms
+
     const screens = document.querySelectorAll('.screen');
     const mainMenu = document.getElementById('main-menu');
     const difficultyMenu = document.getElementById('difficulty-menu');
